@@ -1,7 +1,13 @@
 import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './icons'
+import 'normalize.css'
+import './asset/base.less'
 import './index.less'
+import SvgIcon from './components/SvgIcon'
+
+
 
 const info = {
   title: '张三的驿站',
@@ -18,6 +24,7 @@ class Hello extends React.Component {
                 <h1 className="page-title" style={{ fontFamily: 'Playball'}} id="homeTopTitle">{this.props.info.title}</h1>
                 <h2 className="page-description" id="hitokoto">{this.props.info.description}</h2>
                 <h3 className="page-author" id="hitokotoAuthor">{this.props.info.author}</h3>
+                <SvgIcon iconClass='nav' />
             </div>
         </div>
       </div>

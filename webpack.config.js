@@ -14,8 +14,30 @@ module.exports={
     rules: [ // 文件的匹配规则
       {test: /\.jsx?$/, exclude: /node-modules/, loader: 'babel-loader'},
       { test: /\.(less|css)$/, loader: 'style-loader!css-loader!less-loader' },
-      { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' } // 处理 字体文件的 loader 
-    ]
+      {  // 处理 字体文件的 loader 
+        test: /\.(ttf|eot|svg|woff|woff2)$/,
+        exclude: path.resolve(__dirname, './src/icons'),
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name]-[hash:5].min.[ext]',
+              limit: 5000, // fonts file size < 5KB, use 'base64'; else, output svg file 
+              outputPath: 'font',
+              publicPath: 'font'
+            }
+          }
+        ] 
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: path.resolve(__dirname, './src/icons'),
+        options: {
+          symbolId:'icon-[name]'
+        }
+      }
+    ],
   },
   plugins:[ // 添加plugins节点配置插件
     new htmlWebpackPlugin({
