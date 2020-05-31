@@ -1,0 +1,135 @@
+.container{
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  text-align: center;
+  background: #222 url("https://w.wallhaven.cc/full/4v/wallhaven-4v135p.jpg") center center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(150,150,150,.7);
+  transition: height 1s;
+}
+.inner {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px
+}
+
+.page-title,.sb-title {
+  margin: 10px 0 10px 0;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-family: "Merriweather","Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-seri;
+  color: #fff;
+  -webkit-animation: fade-in-down 1s;
+  animation: fade-in-down 1s both;
+  -webkit-animation-delay: .6s;
+  animation-delay: .5s;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.3)
+}
+
+.page-title {
+  font-size: 5rem
+}
+
+.sb-title {
+  font-size: 4rem
+}
+
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%
+}
+
+.page-description {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.5em;
+  font-weight: 400;
+  letter-spacing: .01rem;
+  font-family: "Merriweather","Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-seri;
+  color: rgba(255,255,255,0.8);
+  -webkit-animation: fade-in-down .9s;
+  animation: fade-in-down .9s both;
+  -webkit-animation-delay: .1s;
+  animation-delay: .3s;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  /* display: none; */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden
+}
+
+.page-author {
+  margin: 0;
+  font-size: 2rem !important;
+  line-height: 1.3em;
+  font-weight: 400;
+  letter-spacing: .01rem;
+  font-family: "Merriweather","Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-seri;
+  // color: rgba(255,255,255,0.8);
+  color: #61dafb;
+  -webkit-animation: fade-in-down .9s;
+  animation: fade-in-down .9s both;
+  -webkit-animation-delay: .1s;
+  animation-delay: .3s;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.scroll-down {
+  font-size: 48px;
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  margin-left: -24px;
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
+}
+
+.svg-class {
+  color: #707070;
+}
+
+.scroll-down:hover  {
+  -webkit-animation: none;
+  animation: none
+}
+.scroll-down:hover .svg-class {
+  color: skyblue;
+}
+
+@keyframes bounce {
+  0%,10%,25%,40%,50% {
+      -webkit-transform: translateY(0) ;
+      transform: translateY(0); 
+  }
+
+  20% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px) ;
+  }
+
+  30% {
+      -webkit-transform: translateY(-5px) ;
+      transform: translateY(-5px); 
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px)
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+  }
+}

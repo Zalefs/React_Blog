@@ -2,37 +2,53 @@ import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './icons'
-import 'normalize.css'
 import './asset/base.less'
 import './index.less'
-import SvgIcon from './components/SvgIcon'
+import Header from './components/index/Header/index'
+import Footer from './components/index/Footer/index'
 
 
 
 const info = {
   title: '张三的驿站',
-  description: '当我鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副。',
-  author: 'Zale'
+  description: '我欲乘风向北行，雪落轩辕大如席；<br />我欲借船向东游，绰约仙子迎风立；<br />我欲踏云千万里，庙堂龙吟奈我何；<br />昆仑之巅沐日光，沧海绝境见青山；<br />长风万里燕归来，不见天涯人不回。',
+  author: '《少年歌行》'
 };
 
-class Hello extends React.Component {
+class Content extends React.Component {
   render() {
-    return <div>
-      <div className="container">
-        <div className="vertical">
-            <div className="main-header-content inner">
-                <h1 className="page-title" style={{ fontFamily: 'Playball'}} id="homeTopTitle">{this.props.info.title}</h1>
-                <h2 className="page-description" id="hitokoto">{this.props.info.description}</h2>
-                <h3 className="page-author" id="hitokotoAuthor">{this.props.info.author}</h3>
-                <SvgIcon iconClass='nav' />
+    return (
+      <div className="content edition-heart">
+        {/*留言板*/}
+        <div className="message-board">
+          <form>
+            <div className="form-item">
+              <span className="form-label">昵称：</span>
+              <input type="text"/>
             </div>
+            <div className="form-item">
+              <span className="form-label">联系邮箱：</span>
+              <input type="email" name="" id=""/>
+            </div>
+            <div className="form-item">
+              <span className="form-label">留言内容：</span>
+              <textarea
+                cols="30"
+                rows="10"
+              />
+            </div>
+          </form>
         </div>
       </div>
-    </div>
+    )
   }
 }
 
 ReactDOM.render(
-  <Hello info={info} />,
+  <div>
+    <Header info={info} />
+    <Content />
+    <Footer />
+  </div>,
   document.getElementById('app')
 )

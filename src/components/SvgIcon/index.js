@@ -1,7 +1,6 @@
 import react from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.less'
-console.log(styles)
 
 const  SvgIcon = props => {
   const { iconClass, fill }  = props
