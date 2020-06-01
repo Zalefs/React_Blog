@@ -46,8 +46,11 @@ module.exports={
       chunks: ['index']
     })
   ],
-  resolve: {
-    extensions: ['.js', '.jsx']
+  resolve: {// 配置如何解析模版
+    extensions: ['.js', '.jsx'],
+    alias: { // 创建别名import或require某些模块时会比较容易
+      '@': path.resolve('src')
+    },
   },
   externals: {
     'react': 'React',
